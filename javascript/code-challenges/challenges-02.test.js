@@ -7,14 +7,16 @@ CHALLENGE 1 - Review
 Write a function named raisedToTheThird that takes in an array of numbers and returns a new array of each of those numbers raised to the 3rd power (hint: look up Math.pow()). Use forEach to solve this problem.
 
 ------------------------------------------------------------------------------------------------ */
-
+// if you are not planning to use the array that is generated, use forEach. you are required to push forEach
 const raisedToTheThird = (arr) => {
-  const array = [];
-  arr.forEach(x => {
-    array.push(Math.pow(x, 3))
-  })
-  return array;
+const newArr = [];
+arr.forEach(x => {
+  newArr.push(Math.pow(x, 3))
+})
+return newArr;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -24,8 +26,8 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 
 const addOne = (arr) => {
   // map does not need empty array or push. x = element(can be anything) it is each element of the array. map iterates over each item in the array
-const newArray = arr.map(x => (x + 1));
-return newArray;
+  const newArr = arr.map(x => x + 1)
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,7 +37,8 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 ------------------------------------------------------------------------------------------------ */
 
 const addQuestion = (arr) => {
-  // Solution code here...
+const array = arr.map(x => x + '?')
+return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,9 +50,13 @@ You may choose to complete this challenge using a for loop, for...in syntax, or 
 
 For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and 2 ^ 3 = 8.
 ------------------------------------------------------------------------------------------------ */
-
+// declare new array outside of for loop and return out of for loop
 const forLoopTwoToThe = (arr) => {
-  // Solution code here...
+  const array = [];
+  for (let i = 0; i < arr.length; i++) {
+array.push(Math.pow(2, arr[i]))
+}
+return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,7 +66,11 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-  // Solution code here...
+const array = [];
+arr.forEach(x => {
+array.push(Math.pow(2, x))
+})
+return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,7 +80,8 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
+const array = arr.map(x => Math.pow(2, x))
+return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,7 +95,7 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -210,19 +222,19 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should add one to all the numbers in the array', () => {
     expect(addOne([2, 3, 5, 11])).toStrictEqual([3, 4, 6, 12]);
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should add a question mark to the end of each string', () => {
     expect(addQuestion(['hello', '301', 'students'])).toStrictEqual(['hello?', '301?', 'students?']);
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(forLoopTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(forLoopTwoToThe([0, 4, 5]).length).toStrictEqual(3);
@@ -233,7 +245,7 @@ xdescribe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(forEachTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(forEachTwoToThe([0, 4, 5]).length).toStrictEqual(3);
@@ -244,7 +256,7 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(mapTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(mapTwoToThe([0, 4, 5]).length).toStrictEqual(3);
