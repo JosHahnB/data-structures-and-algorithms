@@ -7,19 +7,27 @@ CHALLENGE 1 - Review
 Write a function named raisedToTheThird that takes in an array of numbers and returns a new array of each of those numbers raised to the 3rd power (hint: look up Math.pow()). Use forEach to solve this problem.
 
 ------------------------------------------------------------------------------------------------ */
-
+// if you are not planning to use the array that is generated, use forEach. you are required to push forEach
 const raisedToTheThird = (arr) => {
-  // Solution code here...
+const newArr = [];
+arr.forEach(x => {
+  newArr.push(Math.pow(x, 3))
+})
+return newArr;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1. 
+Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1.
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  // Solution code here...
+  // map does not need empty array or push. x = element(can be anything) it is each element of the array. map iterates over each item in the array
+  const newArr = arr.map(x => x + 1)
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -29,7 +37,8 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 ------------------------------------------------------------------------------------------------ */
 
 const addQuestion = (arr) => {
-  // Solution code here...
+const array = arr.map(x => x + '?')
+return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -41,9 +50,13 @@ You may choose to complete this challenge using a for loop, for...in syntax, or 
 
 For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and 2 ^ 3 = 8.
 ------------------------------------------------------------------------------------------------ */
-
+// declare new array outside of for loop and return out of for loop
 const forLoopTwoToThe = (arr) => {
-  // Solution code here...
+  const array = [];
+  for (let i = 0; i < arr.length; i++) {
+array.push(Math.pow(2, arr[i]))
+}
+return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -53,7 +66,11 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-  // Solution code here...
+const array = [];
+arr.forEach(x => {
+array.push(Math.pow(2, x))
+})
+return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,7 +80,8 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
+const array = arr.map(x => Math.pow(2, x))
+return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -77,7 +95,7 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -185,6 +203,9 @@ const snorlaxStats = {
 
 const extractStats = (arr) => {
   // Solution code here...
+  return arr.map(element => {
+    return {name: element.stat.name, total: element.effort + element.baseStat}
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -251,29 +272,29 @@ describe('Testing challenge 6', () => {
 
 xdescribe('Testing challenge 7', () => {
   test('It should return an array containing the character code for each letter', () => {
-    expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([ 67, 111, 100, 101, 51, 48, 49 ]);
+    expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([67, 111, 100, 101, 51, 48, 49]);
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1']).length).toStrictEqual(7);
   });
 });
 
 xdescribe('Testing challenge 8', () => {
   test('It should return an array containing the keys from an object', () => {
-    expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual([ 'odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd' ]);
+    expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual(['odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd']);
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541]).length).toStrictEqual(8);
   });
 
   test('It should work with all odd numbers', () => {
-    expect(evenOdd([1, 3, 5, 7, 9])).toStrictEqual([ 'odd', 'odd', 'odd', 'odd', 'odd' ]);
+    expect(evenOdd([1, 3, 5, 7, 9])).toStrictEqual(['odd', 'odd', 'odd', 'odd', 'odd']);
     expect(evenOdd([1, 3, 5, 7, 9]).length).toStrictEqual(5);
   });
 
   test('It should work with all even numbers', () => {
-    expect(evenOdd([2, 4, 6, 8, 10])).toStrictEqual([ 'even', 'even', 'even', 'even', 'even' ]);
+    expect(evenOdd([2, 4, 6, 8, 10])).toStrictEqual(['even', 'even', 'even', 'even', 'even']);
     expect(evenOdd([2, 4, 6, 8, 10]).length).toStrictEqual(5);
   });
 
   test('It should return the string "N/A" if a non-number is included in the array', () => {
-    expect(evenOdd([5, 8, 2, 'hi'])).toStrictEqual([ 'odd', 'even', 'even', 'N/A' ]);
+    expect(evenOdd([5, 8, 2, 'hi'])).toStrictEqual(['odd', 'even', 'even', 'N/A']);
     expect(evenOdd([5, 8, 2, 'hi']).length).toStrictEqual(4);
   });
 });
@@ -285,7 +306,7 @@ xdescribe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return an array containing objects with name and total values', () => {
     expect(extractStats(snorlaxStats.stats)).toStrictEqual([
       { name: 'speed', total: 35, },
