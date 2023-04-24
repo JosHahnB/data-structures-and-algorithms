@@ -8,7 +8,7 @@ Write a function called addTwo that takes in an array and adds two to every valu
 
 const addTwo = (arr) => {
   const newArr = [];
-  for (i = 0)
+  for (i = 0; 
 };
 
 /* ------------------------------------------------------------------------------------------------
