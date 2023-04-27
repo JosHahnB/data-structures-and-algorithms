@@ -7,11 +7,11 @@ Write a function called addTwo that takes in an array and adds two to every valu
 ------------------------------------------------------------------------------------------------ */
 
   const addTwo = (arr) => {
-    const newArr = [];
-    for (let i = 0; i < arr.length; i++) {
-      newArr.push(arr[i] + 2);
-    }
-    return newArr;
+  const newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(arr[i] + 2);
+  }
+  return newArr;
   }
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,7 +36,7 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
 const containsAnd = (arr) => {
-const andArr = arr.filter(x => x.includes('and'))
+const andArr = arr.filter(x => x.includes('and'));
 return andArr;
 };
 

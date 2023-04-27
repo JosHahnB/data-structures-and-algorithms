@@ -10,7 +10,7 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 
 const addOne = (arr) => {
   const newArray = [];
-  arr.forEach (x => {
+  arr.forEach(x => {
     newArray.push(x + 1)
   })
   return newArray;
@@ -24,11 +24,11 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 ------------------------------------------------------------------------------------------------ */
 
 const addExclamation = (arr) => {
-const newArray = [];
-arr.forEach(x => {
-  newArray.push(x + '!')
-})
-return newArray;
+  const newArr = [];
+  arr.forEach(x => {
+    newArr.push(x + '!')
+  })
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,11 +40,11 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
-const newArray = [];
-arr.forEach(x => {
-  newArray.push(x.toUpperCase())
-})
-return newArray;
+  const newArray = [];
+  arr.forEach(x => {
+    newArray.push(x.toUpperCase())
+  })
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -58,11 +58,15 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  // Solution code here...
+  const wordArr = [];
+  arr.forEach(x => {
+    newArr.push(x.toUpperCase() + '!')
+  })
+  return wordArr;
 };
 
 const speaker = (words, callback) => {
-  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -158,7 +162,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should provide an array of strings, that get uppercased, and a "!" at the end', () => {
     expect(speaker(['hello', '301', 'students'], greeting)).toStrictEqual(['HELLO!', '301!', 'STUDENTS!']);
   });
