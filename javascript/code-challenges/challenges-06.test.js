@@ -23,6 +23,7 @@ Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 
 const getNames = (arr) => {
+  return arr.map(x => x.name.split('').reverse().join(''))
 };
 
 
@@ -34,9 +35,7 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => {
-  const newArr = [];
- str.forEach(x =>x + 'The end.')
- return newArr
+return str + ' The end.';
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -53,7 +52,8 @@ console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
 const appendFirstToLast = (arr) => {
-  // Solution code here...
+const newArr = arr[0];
+arr.push(newArr);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -72,7 +72,7 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
 const addBirthYearProperty = (obj, year) => {
-  // Solution code here...
+obj.yearBorn = year;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -89,7 +89,9 @@ console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
 const setStatusAsAuthor = (people) => {
-  // Solution code here...
+  for (let i = 0; i < people.length; i++) {
+    people[i].isAuthor = true;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
