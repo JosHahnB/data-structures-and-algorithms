@@ -35,6 +35,7 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
+
  arr.splice(idx, 3)
 return arr
 
@@ -69,6 +70,7 @@ const howMuchPencil = (str) => {
     result.push(str.slice(i));
   }
   return result;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,10 +82,12 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-let newArr = arr.split('');
-console.log(newArr);
+
+arr.split('');
+
 return newArr;
 };
+
 
 
 /* ------------------------------------------------------------------------------------------------
