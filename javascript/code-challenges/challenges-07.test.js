@@ -35,8 +35,10 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-  arr.splice(idx, 3);
-  return arr;
+
+ arr.splice(idx, 3)
+return arr
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,7 +48,8 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
-return arr.join(' ')};
+return arr.join(' ');
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -62,12 +65,12 @@ For example, if the input is 'Welcome', the output will be:
 ------------------------------------------------------------------------------------------------ */
 
 const howMuchPencil = (str) => {
-
-  const result = [str];
-  for (let i = 1; i <= str.length; i++) {
+  let result = [];
+  for(let i = 0; i <= str.length; i++) {
     result.push(str.slice(i));
   }
-   return result;
+  return result;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -79,7 +82,12 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  return arr.split('');};
+
+arr.split('');
+
+return newArr;
+};
+
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -125,7 +133,10 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach(v => {
+    let food = v.slice(v.indexOf(' ')).slice(1);
+    result.push(food.slice(food.indexOf(' ')).slice(1));
+  });
   return result;
 };
 
