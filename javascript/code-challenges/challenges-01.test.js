@@ -9,12 +9,12 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  const newArray = [];
-  arr.forEach(x => {
-    newArray.push(x + 1)
-  })
-  return newArray;
-}
+  const newArr = [];
+arr.forEach(x => {
+  newArr.push(x + 1)
+})
+  return newArr;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -25,10 +25,10 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 
 const addExclamation = (arr) => {
   const newArr = [];
-  arr.forEach(x => {
-    newArr.push(x + '!')
-  })
-  return newArr;
+arr.forEach(x => {
+  newArr.push(x + '!')
+})
+return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,11 +40,11 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
-  const newArray = [];
+  const newArr = [];
   arr.forEach(x => {
-    newArray.push(x.toUpperCase())
+    newArr.push(x.toUpperCase());
   })
-  return newArray;
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -58,15 +58,15 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  const wordArr = [];
-  arr.forEach(x => {
-    newArr.push(x.toUpperCase() + '!')
-  })
-  return wordArr;
+return word.toUpperCase() + '!';
 };
 
 const speaker = (words, callback) => {
-
+const speakArr = [];
+words.forEach(x => {
+  speakArr.push(greeting(x))
+})
+return speakArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,11 +86,15 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
+arr.push(value)
+
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+for(let i = 0; i < times; i++) {
+  callback(arr, num)
+}
+return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -168,7 +172,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should add the number 8 to the array five times', () => {
     expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
     expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
