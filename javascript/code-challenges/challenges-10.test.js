@@ -14,7 +14,7 @@ function returnTen(str) {
   else {
     return str.split('').splice(-10);
   }
-  }
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -31,7 +31,16 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
+  let maxValue = 0;
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] > maxValue) {
+        maxValue = matrix[i][j];
+      }
+    }
+  }
+  return maxValue;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -49,7 +58,13 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  // Solution code here...
+  let sumNum = 0;
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      sumNum += matrix[i][j];
+    }
+  }
+  return sumNum;
 };
 
 
@@ -76,8 +91,17 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
+  const totalSales = [];
+  for (let i = 0; i < hoursOpen.length; i++) {
+    let hourTotal = 0;
+    for (let j = 0; j < stores.length; j++) {
+      let store = stores[j];
+      hourTotal += store[i];
+    }
+    totalSales.push(hourTotal);
 
+  }
+  return totalSales;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,7 +115,15 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  const formattedData = [];
+  hours.forEach((hour, index) => {
+    const salesObj = {
+      sales: `${data[index]} cookies`,
+      time: hour
+    };
+    formattedData.push(salesObj);
+  });
+  return formattedData;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,7 +148,18 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  let treatsQuantity = 0;
+
+  arr.forEach((errand) => {
+    if (errand.store === 'Pet store') {
+      const treatsItem = errand.items.find((item) => item.name === 'Treats');
+      if (treatsItem) {
+        treatsQuantity = treatsItem.quantity;
+      }
+    }
+  });
+
+  return treatsQuantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
