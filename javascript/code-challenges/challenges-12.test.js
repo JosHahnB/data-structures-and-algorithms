@@ -7,8 +7,13 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 ------------------------------------------------------------------------------------------------ */
 
 const replaceZeros = (string) => {
-  // Solution code here...
-};
+  const regex = /0/g; // Regular expression to match all occurrences of '0'
+  const replacement = 'zero'; // Word to replace '0' with
+
+  const replacedString = string.replace(regex, replacement);
+
+  return replacedString;};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -19,8 +24,14 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
+
+  const regex = /^\d{4}$/;
+
+  return regex.test(pin);};
+
   // Solution code here...
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -31,6 +42,10 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
+
+  const pattern = /^[a-zA-Z]{5,10}$/;
+  return pattern.test(word);
+
   // Solution code here...
 };
 
@@ -43,6 +58,9 @@ If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const hasNumber = (string) => {
+  const pattern = /[a-zA-z]+\d+/;
+  return pattern.test(string);
+
   // Solution code here...
 };
 
@@ -63,6 +81,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
+  const pattern = /^[a-zA-Z0-9]+(\.[a-zA-z0-9]+)?@[a-zA-Z0-9]+\.(com|net|org)$/;
+  return pattern.test(email)
   // Solution code here...
 };
 
