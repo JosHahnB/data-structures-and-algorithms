@@ -60,6 +60,80 @@ class LinkedList {
     returnStr += "NULL";
     return returnStr;
   }
+
+  append(newVal) {
+    const newNode = new Node(value);
+    let current = this.head;
+    while (current.next) {
+      current = current.next;
+    }
+    current.next = newNode;
+  }
+
+  // insertBefore(val, newVal) {
+  //   let current = this.head;
+  //   while (current) {
+  //     if (current.value === val) return true;
+  //     current = current.next;
+  //     this.append()
+  // }
+  // return this.head
+  // }
+
+  insertBefore(val, newVal) {
+    const newNode = new Node(newVal);
+
+    if (!this.head) {
+      this.head = newNode;
+      return;
+    }
+
+    if (this.head.data === val) {
+      newNode.next = this.head;
+      this.head = newNode;
+      return;
+    }
+
+    let current = this.head;
+    while (current.next) {
+      if (current.next.data === val) {
+        newNode.next = current.next;
+        current.next = newNode;
+        return;
+      }
+      current = current.next;
+    }
+
+    current.next = newNode;
+  }
+
+
+  insertAfter(val, newVal) {
+    const newNode = new Node(newVal);
+
+    if (!this.head) {
+      this.head = newNode;
+      return;
+    }
+
+    if (this.head.data === val) {
+      newNode.next = this.head;
+      this.head = newNode;
+      return;
+    }
+
+    let current = this.head;
+    while (current) {
+      if (current.data === val) {
+        newNode.next = current.next;
+        current.next = newNode;
+        return;
+      }
+      current = current.next;
+    }
+
+    current.next = newNode;
+  }
 }
 
 module.exports = { LinkedList, Node };
