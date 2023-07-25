@@ -134,6 +134,29 @@ class LinkedList {
 
     current.next = newNode;
   }
+
+  kthFromEnd(k) {
+    if (k < 0) {
+      throw new Error("k must be a non-negative integer.");
+    }
+
+    let length = 0;
+    let current = this.head;
+
+    while (current) {
+      length++;
+      current = current.next;
+    }
+
+    if (k >= length) {
+      throw new Error("The list does not have k nodes.");
+    }
+    current = this.head;
+    for (let i = 0; i < length - k - 1; i++) {
+      current = current.next;
+    }
+    return current.value;
+  }
 }
 
 module.exports = { LinkedList, Node };
