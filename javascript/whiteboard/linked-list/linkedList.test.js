@@ -30,6 +30,36 @@ describe("linked list test suite", () => {
       "{ 1 } -> { a } -> { b } -> { c } -> NULL"
     );
   });
+  // -----------------------------------------------------------------------------
+  test('Where k is greater than the length of the linked list', () => {
+    const testLL = new LinkedList(dummyLL);
 
-  
+    expect();
+  })
+
+  test('Where k and the length of the list are the same', () => {
+    const testLL = new LinkedList(dummyLL);
+
+    expect();
+  })
+
+  test('Where k is not a positive integer', () => {
+    const testLL = new LinkedList(dummyLL);
+
+    expect();
+  })
+
+  test('Where the linked list is of a size 1', () => {
+    const testLL = new LinkedList(dummyLL);
+
+    expect();
+  })
+
+  test('“Happy Path” where k is not at the end, but somewhere in the middle of the linked list', () => {
+    const testLL = new LinkedList(dummyLL);
+
+    expect();
+  })
+
+
 });
