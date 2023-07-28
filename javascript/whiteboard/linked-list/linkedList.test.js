@@ -55,7 +55,27 @@ describe("linked list test suite", () => {
     expect();
   })
 
-  test('“Happy Path” where k is not at the end, but somewhere in the middle of the linked list', () => {
+  test('Happy Path” where k is not at the end, but somewhere in the middle of the linked list', () => {
+    const testLL = new LinkedList(dummyLL);
+
+    expect();
+  })
+
+                          // Class 8
+// _________________________________________________________________________
+  test('if list1 has 2 nodes and list2 has 3 nodes i expect to get back list1-', () => {
+    const testLL = new LinkedList(dummyLL);
+
+    expect();
+  })
+
+  test('if list1 is empty and list2 has nodes i would expect to get bback all of nodes from list2', () => {
+    const testLL = new LinkedList(dummyLL);
+
+    expect();
+  })
+
+  test('if list1 has only 1 node and list2 has 0 nodes', () => {
     const testLL = new LinkedList(dummyLL);
 
     expect();

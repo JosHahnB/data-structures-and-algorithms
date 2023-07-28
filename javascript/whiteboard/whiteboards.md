@@ -6,3 +6,4 @@
 ![array-binary-search, code challenge 3](./img/array-binary-search.png)
 ![array-binary-search, code challenge 6](./img/insert-before-method.png)
 ![kth, code challenge 7](./img/kth.png.png)
+![linked-list-zip, code challenge 8](./img/linked-list-zip.png)
