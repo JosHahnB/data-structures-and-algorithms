@@ -157,6 +157,24 @@ class LinkedList {
     }
     return current.value;
   }
+
+  zipLists(list1, list2) {
+    const zippedList = new LinkedList();
+
+    // Create two temps, one for each linked list.
+    let temp1 = list1.head;
+    let temp2 = list2.head;
+
+    // Iterate through the two linked lists
+    while (temp1 && temp2) {
+      zippedList.addNode(temp1.data);
+      zippedList.addNode(temp2.data);
+      temp1 = temp1.next;
+      temp2 = temp2.next;
+    }
+    return zippedList;
+  }
 }
+
 
 module.exports = { LinkedList, Node };
