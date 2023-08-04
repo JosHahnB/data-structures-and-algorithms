@@ -7,3 +7,4 @@
 ![array-binary-search, code challenge 6](./img/insert-before-method.png)
 ![kth, code challenge 7](./img/kth.png.png)
 ![linked-list-zip, code challenge 8](./img/linked-list-zip.png)
+![stack-and-q's, code challenge 10](./img/stack-and-q's.png)
