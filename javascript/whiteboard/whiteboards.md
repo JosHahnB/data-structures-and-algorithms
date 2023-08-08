@@ -8,3 +8,4 @@
 ![kth, code challenge 7](./img/kth.png.png)
 ![linked-list-zip, code challenge 8](./img/linked-list-zip.png)
 ![stack-and-q's, code challenge 10](./img/stack-and-q's.png)
+![pseudo-stack, cc 11](./img/pseudo-stack.png)
