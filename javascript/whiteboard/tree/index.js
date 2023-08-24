@@ -1,88 +1,100 @@
 class Node {
-  constructor(val) {
-    this.val = val,
-      this.left = null,
-      this.right = null,
-      this.next = null
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+    this.next = null;
   }
 }
 
-class LL {
-  constructor() {
-    this.head = null;
-  }
-
-  append(val) {
-    let n = new Node(val)
-    if (!this.head) { this.head = n }
-    else {
-      // traverse the list, until we hit the end (no next)
-      // the last node's .next is n
-    }
-  }
-}
-
-
-class Tree {
+class BinaryTree {
   constructor() {
     this.root = null;
   }
 
-  insertAfter(val) {
-    let newNode = new Node(val);
-    if (!this.root) { this.root = newNode; return }
-    else {
-      this._insert(this.root, newNode)
-    }
-    // Start at the root
-    // If value < root.value then go left and look there ...
-    // Otherwise if value > root.value, then go right and look there ...
-
-  }
-  _insert = (node, newNode) => {
-    if (newNode.value < node.value) {
-      if (!node.left) {
-        node.left = newNode
-      } else {
-        this._insert(node.left, newNode)
+  preOrder() {
+    const result = [];
+    const traverse = (node) => {
+      if (node) {
+        result.push(node.value);
+        traverse(node.left);
+        traverse(node.right);
       }
-    } else if (newNode.value > node.value) {
-      if (!node.right) {
-        node.right = newNode;
-      } else {
-        this._insert(node.right, newNode)
-      }
-    }
-    // if newNode.value < node.value
-    //   if node does not have a left ...
-    //      node.left = newNode;
-    //   otherwise ...
-    //     return _insert( node.left )
-    // else if newNode.value > node.value
-    //   ... all that stuff but on the .right
-    _insert(this.root)
+    };
+    traverse(this.root);
+    return result;
   }
 
-  // inOrder();
-  // inOrder( root, [1,2,4,9] );
-  inOrder(node = this.root, results = []) {
-    // pre-order does the push here ...
-    if (node.left) { this.inOrder(node.left, results) }
-    results.push(node.val);
-    if (node.right) { this.inOrder(node.right, results) }
-    // post-order does the push here
+  inOrder() {
+    const result = [];
+    const traverse = (node) => {
+      if (node) {
+        traverse(node.left);
+        result.push(node.value);
+        traverse(node.right);
+      }
+    };
+    traverse(this.root);
+    return result;
+  }
 
-    return results
+  postOrder() {
+    const result = [];
+    const traverse = (node) => {
+      if (node) {
+        traverse(node.left);
+        traverse(node.right);
+        result.push(node.value);
+      }
+    };
+    traverse(this.root);
+    return result;
   }
 }
 
-let t = new Tree();
-t.insert(10);
-t.insert(7);
-t.insert(9);
-t.insert(5);
-t.insert(15);
+class BinarySearchTree extends BinaryTree {
+  constructor() {
+    super();
+  }
 
-let values = t.inOrder();
+  add(value) {
+    const newNode = new Node(value);
 
-console.log(values);
+    if (!this.root) {
+      this.root = newNode;
+      return;
+    }
+    let currentNode = this.root;
+    while (currentNode) {
+      if (value < currentNode.value) {
+        if (!currentNode.left) {
+          currentNode.left = newNode;
+          return;
+        }
+        currentNode = currentNode.left;
+      } else {
+        if (!currentNode.right) {
+          currentNode.right = newNode;
+          return;
+        }
+        currentNode = currentNode.right;
+      }
+    }
+  }
+
+  contains(value) {
+    let currentNode = this.root;
+    while (currentNode) {
+      if (value === currentNode.value) {
+        return true;
+      } else if (value < currentNode.value) {
+        currentNode = currentNode.left;
+      } else {
+        currentNode = currentNode.right;
+      }
+    }
+    return false;
+  }
+}
+
+module.exports = { BinarySearchTree, Node };

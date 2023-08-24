@@ -19,3 +19,8 @@ Adds a new node with that value in the correct location in the binary search tre
 Contains
 Argument: value
 Returns: boolean indicating whether or not the value is in the tree at least once.
+
+![tree-example](../img/trees.png)
+
+## to test
+jest tree
