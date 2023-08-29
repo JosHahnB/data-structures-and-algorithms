@@ -95,6 +95,15 @@ class BinarySearchTree extends BinaryTree {
     }
     return false;
   }
+
+  breadthFirst(value) {
+    const newNode = new Node(value);
+    const result = [];
+    let currentNode = this.root;
+    while (result.length > 0) {
+      
+    }
+  }
 }
 
 module.exports = { BinarySearchTree, Node };
