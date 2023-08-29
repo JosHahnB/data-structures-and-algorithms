@@ -19,7 +19,8 @@ Return: list of all values in the tree, in the order they were encountered
 
 ## code challenge 11
 
-for this whiteboard I am supposed to have 2 stack, 1 to enqueue from, and a 2nd to dequeue from. The goal is for the two stacks together to act as a queue would.
+For this whiteboard we are using the breadthFirst method of traversing through a tree.
+
 
 ### Whiteboard Process
 
