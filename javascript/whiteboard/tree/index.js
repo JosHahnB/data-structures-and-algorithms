@@ -7,6 +7,8 @@ class Node {
   }
 }
 
+class
+
 class BinaryTree {
   constructor() {
     this.root = null;
@@ -101,7 +103,7 @@ class BinarySearchTree extends BinaryTree {
     const result = [];
     let currentNode = this.root;
     while (result.length > 0) {
-      
+    
     }
   }
 }
