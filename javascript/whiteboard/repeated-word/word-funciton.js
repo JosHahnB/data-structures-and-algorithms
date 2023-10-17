@@ -7,12 +7,12 @@ function repeatedWord(str) {
 
   for (let i = 0; i < words.length; i++) {
     const word1 = words[i];
-    for (let j = i +1; j < words.length; j++) {
+    for (let j = i + 1; j < words.length; j++) {
       const word2 = words[j];
       if (word1 === word2) {
         return word1
       }
     }
   }
-  return 'no repeats found...'; 
+  return 'no repeats found...';
 }
