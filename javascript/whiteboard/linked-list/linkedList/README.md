@@ -21,7 +21,7 @@ Returns: a string representing all the values in the Linked List, formatted as:
 
 ### Whiteboard Process
 
-![linked list img](../..img/linked-list.png)
+![linked list img](../../img/linked-list.png)
 
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
