@@ -9,6 +9,7 @@ describe('BinaryTree', () => {
     tree1.root.left.left = new TreeNode(3);
     tree1.root.left.right = new TreeNode(8);
     tree1.root.right.right = new TreeNode(20);
+    
 
     expect(tree1.findMaxValue()).to.equal(20);
 
