@@ -44,3 +44,15 @@ for this whiteboard I am supposed to have 2 stack, 1 to enqueue from, and a 2nd 
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 npm test stackQueuePseudo
+
+## code challenge 11
+
+for this whiteboard I am supposed to have 2 stack, 1 to enqueue from, and a 2nd to dequeue from. The goal is for the two stacks together to act as a queue would.
+
+### Whiteboard Process
+
+![pseudo-stack, cc 11](./img/pseudo-stack.png)
+
+### Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+npm test stackQueuePseudo
