@@ -1,3 +1,5 @@
+import mergeSort from "./mergeSort";
+
 const arr1 = [8, "hello", 23, true, 16, false, 15, NaN];
 const sortedArr1 = mergeSort(arr1);
 console.assert(sortedArr1.length === arr1.length, "Array length should remain the same");
