@@ -21,3 +21,4 @@ e. Compare 8 and no more elements: Move 8 to the final sorted array.
 
 Final Sorted Array: [4, 8, 15, 16, 23, 42].
 
+![tree-example](../img/mergeSort.png)
