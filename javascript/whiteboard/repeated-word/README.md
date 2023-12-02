@@ -1,13 +1,17 @@
 # code challenge 31
 
-
+Write a function called repeated word that finds the first word to occur more than once in a string
+Arguments: string
+Return: string
 
 ## Whiteboard Process
+
+![repeatedWord](../img/repeatedWord.png)
 
 
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-O(N), where N is the total number of nodes in the original tree because it takes time to traverse the tree. However, it is linear and will not effect time complexity.
+
 
 ### Solution
 
