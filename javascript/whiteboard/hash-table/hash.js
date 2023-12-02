@@ -58,14 +58,27 @@ class Hashtable {
   }
 
   get(key) {
+    const index = this.hash(key) % this.size;
+    const array = this.buckets[index];
+    if (!array) return undefined;
 
+    for (let i = 0; i < array.length; i++) {
+      if (array[i].key === key) {
+        return array[i].value;
+      }
+    }
+
+    return undefined;
   }
 
   has(key) {
-
+    return this.keys[key] !== undefined;
   }
 
   keys() {
-
+    return Object.keys(this.keys);
   }
+
 }
+
+module.exports = Hashtable
